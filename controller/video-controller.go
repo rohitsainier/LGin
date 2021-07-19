@@ -9,7 +9,7 @@ import (
 
 type VideoController interface {
 	FindAll() []entity.Video
-	Save(ctx *gin.Context) entity.ResponseVideo
+	Save(ctx *gin.Context) error
 }
 
 type controller struct {
@@ -25,14 +25,13 @@ func New(service service.VideoService) VideoController {
 func (c *controller) FindAll() []entity.Video {
 	return c.service.FindAll()
 }
-func (c *controller) Save(ctx *gin.Context) entity.ResponseVideo {
+func (c *controller) Save(ctx *gin.Context) error {
 	var video entity.Video
-	ctx.BindJSON(&video)
+	err := ctx.ShouldBindJSON(&video)
+	if err != nil {
+		return err
+	}
 	c.service.Save(video)
-	var response entity.ResponseVideo
-	response.Code = 100
-	response.Message = "Video added successfully"
-	response.Data = video
-	return response
+	return nil
 
 }

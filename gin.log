@@ -5,7 +5,7 @@
 [GIN-debug] GET    /videos                   --> main.videos (4 handlers)
 [GIN-debug] POST   /videos/add               --> main.saveVideo (4 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-::1 - [19 Jul 21 21:39 IST] GET /videos 401 34.603µs 
-::1 - [19 Jul 21 21:40 IST] GET /videos 200 117.465µs 
-::1 - [19 Jul 21 21:40 IST] POST /videos/add 200 157.573µs 
-::1 - [19 Jul 21 21:40 IST] GET /videos 200 30.191µs 
+::1 - [19 Jul 21 22:31 IST] POST /videos/add 200 275.06µs 
+::1 - [19 Jul 21 22:31 IST] POST /videos/add 400 86.596µs 
+::1 - [19 Jul 21 22:31 IST] POST /videos/add 200 140.712µs 
+::1 - [19 Jul 21 22:31 IST] GET /videos 200 44.78µs 
