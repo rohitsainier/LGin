@@ -4,6 +4,8 @@ import (
 	"LGin/controller"
 	"LGin/middlewares"
 	"LGin/service"
+	"io"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,7 +15,14 @@ var (
 	videoController controller.VideoController = controller.New(videoService)
 )
 
+func SetupLogOutput() {
+	f, _ := os.Create("gin.log")
+	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
+}
+
 func main() {
+	SetupLogOutput()
+
 	server := gin.New()
 	server.Use(gin.Recovery(), middlewares.Logger())
 
