@@ -24,7 +24,7 @@ func main() {
 	SetupLogOutput()
 
 	server := gin.New()
-	server.Use(gin.Recovery(), middlewares.Logger())
+	server.Use(gin.Recovery(), middlewares.Logger(), middlewares.BasicAuth())
 
 	server.GET("/videos", videos)
 	server.POST("/videos/add", saveVideo)

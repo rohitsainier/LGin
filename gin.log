@@ -2,9 +2,10 @@
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] GET    /videos                   --> main.videos (3 handlers)
-[GIN-debug] POST   /videos/add               --> main.saveVideo (3 handlers)
+[GIN-debug] GET    /videos                   --> main.videos (4 handlers)
+[GIN-debug] POST   /videos/add               --> main.saveVideo (4 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-::1 - [19 Jul 21 21:33 IST] GET /videos 200 121.94µs 
-::1 - [19 Jul 21 21:33 IST] POST /videos/add 200 126.16µs 
-::1 - [19 Jul 21 21:33 IST] GET /videos 200 54.259µs 
+::1 - [19 Jul 21 21:39 IST] GET /videos 401 34.603µs 
+::1 - [19 Jul 21 21:40 IST] GET /videos 200 117.465µs 
+::1 - [19 Jul 21 21:40 IST] POST /videos/add 200 157.573µs 
+::1 - [19 Jul 21 21:40 IST] GET /videos 200 30.191µs 
