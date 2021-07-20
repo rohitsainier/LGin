@@ -22,13 +22,29 @@ func SetupLogOutput() {
 }
 
 func main() {
+	//setting up log output
 	SetupLogOutput()
 
 	server := gin.New()
+
+	//loading ui
+	server.Static("/css", "./templates/css")
+	server.LoadHTMLGlob("templates/*.html")
+
+	//middlewares
 	server.Use(gin.Recovery(), middlewares.Logger(), middlewares.BasicAuth())
 
-	server.GET("/videos", videos)
-	server.POST("/videos/add", saveVideo)
+	apiRoutes := server.Group("/api")
+	{
+		apiRoutes.GET("/videos", videos)
+		apiRoutes.POST("/videos/add", saveVideo)
+	}
+
+	viewRoutes := server.Group("/view")
+	{
+		viewRoutes.GET("/videos", videoController.ShowAll)
+	}
+
 	server.Run(":8080")
 }
 
@@ -43,7 +59,7 @@ func saveVideo(ctx *gin.Context) {
 		})
 	} else {
 		ctx.JSON(http.StatusOK, gin.H{
-			"message": "Video saved successfully!",
+			"message": "Video added successfully!",
 		})
 	}
 

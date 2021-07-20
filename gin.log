@@ -2,10 +2,38 @@
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] GET    /videos                   --> main.videos (4 handlers)
-[GIN-debug] POST   /videos/add               --> main.saveVideo (4 handlers)
+[GIN-debug] GET    /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
+[GIN-debug] HEAD   /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
+[GIN-debug] Loaded HTML Templates (4): 
+	- 
+	- footer.html
+	- header.html
+	- index.html
+
+[GIN-debug] GET    /api/videos               --> main.videos (4 handlers)
+[GIN-debug] POST   /api/videos/add           --> main.saveVideo (4 handlers)
+[GIN-debug] GET    /view/videos              --> LGin/controller.VideoController.ShowAll-fm (4 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-::1 - [19 Jul 21 22:31 IST] POST /videos/add 200 275.06µs 
-::1 - [19 Jul 21 22:31 IST] POST /videos/add 400 86.596µs 
-::1 - [19 Jul 21 22:31 IST] POST /videos/add 200 140.712µs 
-::1 - [19 Jul 21 22:31 IST] GET /videos 200 44.78µs 
+::1 - [20 Jul 21 22:55 IST] POST /api/videos/add 200 468.167µs 
+127.0.0.1 - [20 Jul 21 22:55 IST] GET /view/videos 200 2.0565ms 
+127.0.0.1 - [20 Jul 21 22:55 IST] GET /view/videos 200 920.79µs 
+127.0.0.1 - [20 Jul 21 22:55 IST] GET /favicon.ico 401 3.487µs 
+127.0.0.1 - [20 Jul 21 22:55 IST] GET /view/videos 200 1.244499ms 
+::1 - [20 Jul 21 22:56 IST] POST /api/videos/add 200 59.63µs 
+127.0.0.1 - [20 Jul 21 22:57 IST] GET /view/videos 200 791.905µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 138.421µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 64.211µs 
+127.0.0.1 - [20 Jul 21 22:57 IST] GET /view/videos 200 718.32µs 
+127.0.0.1 - [20 Jul 21 22:57 IST] GET /favicon.ico 401 4.829µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 73.831µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 84.098µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 54.702µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 63.909µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 109.335µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 83.984µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 68.796µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 51.552µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 195.668µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 99.259µs 
+::1 - [20 Jul 21 22:57 IST] POST /api/videos/add 200 74.352µs 
+127.0.0.1 - [20 Jul 21 22:57 IST] GET /view/videos 200 1.232068ms 
